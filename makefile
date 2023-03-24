@@ -7,7 +7,8 @@ LIBINC = -I ./libft/src -I ./mlx
 LIB		= libmlx.dylib libft.a
 
 MAND = 	main.c \
-		mlx_utils.c
+		mlx_utils.c \
+		mlx_input.c 
 
 MANDOBJ	= $(MAND:.c=.o)
 
@@ -21,7 +22,7 @@ lft:
 mlx:
 	(cd mlx && make)
 %.o : %.c lft
-	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
+	$(CC) -Wall -Wextra -Werror  -Imlx -c $< -o $@
 	# $(CC) -c $(CFLAGS) $(INCFLAG) $< -o $@
 
 debug: $(MANDOBJ)| lft mlx
