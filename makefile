@@ -1,10 +1,11 @@
 NAME = so_long
 RM = rm -f
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-DEBUG = -Wall -Wextra -g
+CFLAGS = -Wall -Wextra -Werror -Iinclude -lglfw
+DEBUG = -Wall -Wextra -g -ldl -lglfw -pthread -lm
 LIBINC = -I ./libft/src -I ./mlx
-LIB		= libmlx.dylib libft.a
+LIB		= MLX42/build/libmlx42.a libft/libft.a
+LIBMLX  = MLX42
 
 MAND = 	main.c \
 		mlx_utils.c \
@@ -13,21 +14,18 @@ MAND = 	main.c \
 MANDOBJ	= $(MAND:.c=.o)
 
 $(NAME): $(MANDOBJ) | lft mlx
-	cp libft/libft.a .
-	cp mlx/libmlx.dylib .
 	$(CC) $(MANDOBJ) $(LIBINC) $(CFLAGS) -o $(NAME) $(LIB)
 
 lft:
 	(cd libft && make && make clean)
+
 mlx:
-	(cd mlx && make)
+	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
+
 %.o : %.c lft
-	$(CC) -Wall -Wextra -Werror  -Imlx -c $< -o $@
-	# $(CC) -c $(CFLAGS) $(INCFLAG) $< -o $@
+	$(CC) -Wall -Wextra -Werror -c $< -o $@
 
 debug: $(MANDOBJ)| lft mlx
-	cp libft/libft.a .
-	cp mlx/libmlx.dylib .
 	$(CC) $(LIBINC) $(DEBUG) $(MANDOBJ) -o $(NAME) $(LIB)
 
 clean:
@@ -35,9 +33,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME) $(BIN_NAME)
-	$(RM) libft.a
-	$(RM) libmlx.dylib
-	cd mlx && make clean
+	$(RM) -f MLX42/build/libmlx42.a
 	cd libft && make fclean
 
 re: fclean all
