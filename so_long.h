@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <math.h>
-#include "libft/src/libft.h"
+#include "Libft/src/libft.h"
 #include "MLX42/include/MLX42/MLX42.h"
 
 typedef struct	s_data {
