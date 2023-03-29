@@ -1,10 +1,10 @@
 NAME = so_long
 RM = rm -f
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iinclude -lglfw
-DEBUG = -Wall -Wextra -g -ldl -lglfw -pthread -lm
-LIBINC = -I ./libft/src -I ./mlx
-LIB		= MLX42/build/libmlx42.a libft/libft.a
+CFLAGS = -Wall -Wextra -Werror -Iinclude
+DEBUG = -Wall -Wextra -g -Iinclude
+LIBINC = -I ./libft/src -I ./MLX42
+LIB		= MLX42/build/libmlx42.a libft/libft.a libglfw.3.3.dylib
 LIBMLX  = MLX42
 
 MAND = 	main.c \
