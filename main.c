@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dylan <dylan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 12:08:11 by jkulka            #+#    #+#             */
-/*   Updated: 2023/03/30 01:17:07 by dylan            ###   ########.fr       */
+/*   Updated: 2023/03/30 07:48:44 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,9 @@ int32_t	main(void)
 	/* Do stuff */
 
 	// Create and display the image.
-	img = mlx_texture_to_image(mlx,hehe);
+	// img = mlx_texture_to_image(mlx,hehe);
 
-	// ft_print_rect_fill(img, rect, create_trgb(1, 12, 31, 12), create_trgb(1, 123, 12, 31));
+	ft_print_rect_fill(img, rect, create_trgb(1, 12, 31, 12), create_trgb(1, 123, 12, 31));
 	mlx_image_to_window(mlx, img, 0, 0);
 	mlx_loop_hook(mlx, ft_hook2, mlx);
 	mlx_loop(mlx);
