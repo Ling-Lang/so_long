@@ -1,7 +1,7 @@
 NAME = so_long
 RM = rm -f
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror
 DEBUG = -Wall -Wextra -g -Iinclude
 LIBINC = -I ./Libft/src -I ./MLX42/include
 LIB		=  MLX42/build/libmlx42.a Libft/libft.a libglfw.3.3.dylib
