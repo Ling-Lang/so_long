@@ -37,6 +37,18 @@ void ft_print_square(mlx_image_t *img, t_rect rect,int color)
 	ft_putline(img, rect.x2, rect.y2, rect.x1, rect.y2, color);
 	ft_putline(img, rect.x1, rect.y2,rect.x1, rect.y1, color);
 }
+void ft_draw_rect(mlx_image_t *img, int posX, int posY, int width, int height, int color)
+{
+  int posX2;
+  int posY2;
+
+  posX2 = posX + width;
+  posY2 = posY + height;
+  ft_putline(img, posX, posY,posX2, posY, color);
+  ft_putline(img, posX2, posY, posX2, posY2, color);
+  ft_putline(img, posX2, posY2, posX, posY2, color);
+  ft_putline(img, posX, posY2, posX, posY, color);
+}
 
 void ft_print_rect_fill(mlx_image_t *img, t_rect rect, int color_border, int color_fill)
 {

@@ -13,6 +13,7 @@
 #include <math.h>
 #include "Libft/src/libft.h"
 #include "MLX42/include/MLX42/MLX42.h"
+#include <fcntl.h>
 
 typedef struct	s_data {
 	mlx_image_t	*img;
@@ -33,6 +34,9 @@ typedef struct s_rect {
 } t_rect;
 void	ft_putline(mlx_image_t *img, int x1, int y1,int x2, int y2, int color);
 void ft_print_square(mlx_image_t *img, t_rect rect,int color);
+void ft_draw_rect(mlx_image_t *img, int posX, int posY, int width, int height, int color);
 void ft_print_rect_fill(mlx_image_t *img, t_rect rect, int color_border, int color_fill);
 int	create_trgb(int t, int r, int g, int b);
 int move_player(int keycode, t_rect *rect);	
+int ft_checkmap(int argc, char *argv[]);
+void ft_validate_map(char *map);

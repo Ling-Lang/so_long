@@ -92,7 +92,6 @@ int32_t	main(int argv, char *argc[])
 
 	// Create and display the image.
 	img = mlx_texture_to_image(mlx,hehe);
-
 	// ft_print_rect_fill(img, rect, create_trgb(1, 12, 31, 12), create_trgb(1, 123, 12, 31));
 	mlx_image_to_window(mlx, img, 0, 0);
 	mlx_loop_hook(mlx, ft_hook, mlx);

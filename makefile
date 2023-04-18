@@ -9,7 +9,8 @@ LIBMLX  = MLX42
 
 MAND = 	main.c \
 		mlx_utils.c \
-		mlx_input.c 
+		mlx_input.c \
+		check_map.c
 
 MANDOBJ	= $(MAND:.c=.o)
 
