@@ -1,4 +1,4 @@
-# So Long: A 2D Dolphin Game
+# So Long: A 2D Game using the 42 MLX42 library
 
 This repository contains the code for a simple 2D game called "So Long." In this game, a dolphin (or any character of your choice) needs to collect all the collectibles on the map and exit through the shortest route possible. The game uses the MiniLibX library for graphics and follows specific rules for map components and gameplay.
 
