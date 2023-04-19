@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:54:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/04/19 15:07:02 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/04/19 15:13:46 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct	s_data {
 static mlx_image_t* img;
 static float_t		speed;
 static char			*sprite;
+static mlx_texture_t* player;
 typedef struct s_point {
 	int x;
 	int y;

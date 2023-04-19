@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:31:52 by jkulka            #+#    #+#             */
-/*   Updated: 2023/04/19 15:09:11 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/04/19 15:20:54 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,25 @@ static void ft_error(void)
 }
 static void ft_move_player(void *data)
 {
-	
+	mlx_t	*mlx;
+	mlx = data;
 	if (mlx_is_key_down(data, MLX_KEY_UP))
 	{
 		img->instances[0].y -= speed;
 		sprite = "./textures/Ship_Forward.png";
+		player = mlx_load_png(sprite);
+
+		
+		
 
 	}
 	if (mlx_is_key_down(data, MLX_KEY_DOWN))
 	{
 		img->instances[0].y += speed;
   		sprite = "./textures/Ship_Down.png";
+		player = mlx_load_png(sprite);
+		
+
 		
 	}
 	if (mlx_is_key_down(data, MLX_KEY_LEFT))
@@ -91,6 +99,8 @@ static void ft_hook(void* data)
 	}
 	ft_move_player(data);
 	ft_wall_collission(data);
+
+	
 	
 
 	
@@ -107,7 +117,7 @@ int32_t	main(int argv, char *argc[])
   }
   sprite = "./textures/Ship_Forward.png";
   speed = 2.5;
-	mlx_texture_t* player = mlx_load_png(sprite);
+	player = mlx_load_png(sprite);
 	
 	t_rect rect;
 	// int x = 0;
