@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:54:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/03/27 09:49:22 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/04/19 15:07:02 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 #include "MLX42/include/MLX42/MLX42.h"
 #include <fcntl.h>
 
+#define WIDTH 800
+#define HEIGHT 600
+
 typedef struct	s_data {
 	mlx_image_t	*img;
 	mlx_t		*mlx;
 }				t_data;
 
-
+static mlx_image_t* img;
+static float_t		speed;
+static char			*sprite;
 typedef struct s_point {
 	int x;
 	int y;
@@ -39,4 +44,6 @@ void ft_print_rect_fill(mlx_image_t *img, t_rect rect, int color_border, int col
 int	create_trgb(int t, int r, int g, int b);
 int move_player(int keycode, t_rect *rect);	
 int ft_checkmap(int argc, char *argv[]);
-void ft_validate_map(char *map);
+void  ft_draw_map(char map);
+void ft_validate_map(char *path);
+// void ft_draw_map_lines(char *map);

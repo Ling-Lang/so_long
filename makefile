@@ -10,7 +10,8 @@ LIBMLX  = MLX42
 MAND = 	main.c \
 		mlx_utils.c \
 		mlx_input.c \
-		check_map.c
+		check_map.c \
+		movement.c
 
 MANDOBJ	= $(MAND:.c=.o)
 
