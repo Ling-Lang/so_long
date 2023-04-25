@@ -6,38 +6,70 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:54:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/04/19 15:13:46 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/04/25 14:45:46 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include "Libft/src/libft.h"
 #include "MLX42/include/MLX42/MLX42.h"
 #include <fcntl.h>
 
 #define WIDTH 800
 #define HEIGHT 600
+# define W 13
+# define A 0
+# define S 1
+# define D 2
+# define UP -1
+# define DOWN 1
+# define LEFT -1
+# define RIGHT 1
 
-typedef struct	s_data {
-	mlx_image_t	*img;
-	mlx_t		*mlx;
+typedef struct s_img
+{
+	void	*player_up;
+	void	*player_left;
+	void	*player_right;
+	void	*player_down;
+	void	*background;
+}				t_img;
+typedef struct s_map
+{
+	char	**map;
+	void	*object;
+	int		x;
+	int		y;
+	int		collectible;
+}				t_map;
+typedef struct s_data
+{
+	mlx_t	*mlx;
+	int		size_x;
+	int		size_y;
+	int		p_x;
+	int		p_y;
+	int		counter;
+	int		collected;
+	t_map	*map;
+	t_img	*img;
 }				t_data;
-
-static mlx_image_t* img;
-static float_t		speed;
-static char			*sprite;
-static mlx_texture_t* player;
 typedef struct s_point {
 	int x;
 	int y;
 } t_point;
-
 typedef struct s_rect {
 	int x1;
 	int y1;
 	int x2;
 	int y2;
 } t_rect;
+
+
+
+
 void	ft_putline(mlx_image_t *img, int x1, int y1,int x2, int y2, int color);
 void ft_print_square(mlx_image_t *img, t_rect rect,int color);
 void ft_draw_rect(mlx_image_t *img, int posX, int posY, int width, int height, int color);
@@ -47,4 +79,7 @@ int move_player(int keycode, t_rect *rect);
 int ft_checkmap(int argc, char *argv[]);
 void  ft_draw_map(char map);
 void ft_validate_map(char *path);
+void ft_loop(void *data);
+void ft_init(t_data *data);
+void ft_keyhook(int keycode, t_data *data);
 // void ft_draw_map_lines(char *map);

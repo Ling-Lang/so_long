@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:17:33 by jkulka            #+#    #+#             */
-/*   Updated: 2023/03/27 09:47:10 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/04/25 13:42:10 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,6 @@ void ft_print_rect_fill(mlx_image_t *img, t_rect rect, int color_border, int col
 	}
 }
 
-/*
-** create_trgb - create a color value from t, r, g, b values
-** @t: transparency
-** @r: red
-** @g: green
-** @b: blue
-*/
 int	create_trgb(int t, int r, int g, int b)
 {
 	return (t << 24 | r << 16 | g << 8 | b);

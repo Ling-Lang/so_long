@@ -8,6 +8,7 @@ int ft_checkmap(int argc, char *argv[])
 {
   // int width;
   // int height;
+  
   char *extension = ".ber";
   size_t extension_len = ft_strlen(extension);
   size_t filename_len = ft_strlen(argv[1]);
