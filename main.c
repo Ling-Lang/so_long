@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:33:52 by jkulka            #+#    #+#             */
-/*   Updated: 2023/04/25 14:45:58 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/04/26 10:51:10 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 static int	ft_render_next_frame(t_data *data)
 /* checks for keyboard or mouse input */
 {
+    ft_background(data);
     mlx_key_hook(data->mlx, ft_keyhook, data);
 	return (0);
-}int main (int argv, char *argc[])
+}
+int main (int argv, char *argc[])
 {
     t_data data;
     
@@ -33,9 +35,13 @@ static int	ft_render_next_frame(t_data *data)
     ft_init(&data);
     img = mlx_texture_to_image(data.mlx, data.img->player_up);
     mlx_image_to_window(data.mlx, img, 200, 0);
-    mlx_loop_hook(data.mlx, ft_loop, data.mlx);
     ft_render_next_frame(&data);
+    // mlx_key_hook(mlx, ft_keyhook, NULL);
     mlx_loop(data.mlx);
+
+    
+
+    mlx_loop_hook(data.mlx, ft_loop, data.mlx);
     mlx_terminate(data.mlx);
     return (EXIT_SUCCESS);
 }

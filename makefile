@@ -11,7 +11,9 @@ MAND = 	main.c \
 		mlx_utils.c \
 		mlx_input.c \
 		check_map.c \
-		movement.c
+		movement.c	\
+		init.c 		\
+		hooks.c
 
 MANDOBJ	= $(MAND:.c=.o)
 

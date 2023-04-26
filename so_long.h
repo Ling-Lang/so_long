@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:54:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/04/25 14:45:46 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/04/26 10:52:44 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct s_map
 }				t_map;
 typedef struct s_data
 {
-	mlx_t	*mlx;
+	mlx_t*	mlx;
 	int		size_x;
 	int		size_y;
 	int		p_x;
@@ -80,6 +80,10 @@ int ft_checkmap(int argc, char *argv[]);
 void  ft_draw_map(char map);
 void ft_validate_map(char *path);
 void ft_loop(void *data);
+void ft_background(t_data *data);
 void ft_init(t_data *data);
-void ft_keyhook(int keycode, t_data *data);
+void ft_keyhook(mlx_key_data_t keydata, t_data *data);
+
 // void ft_draw_map_lines(char *map);
+
+
