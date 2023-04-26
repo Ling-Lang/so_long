@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:33:52 by jkulka            #+#    #+#             */
-/*   Updated: 2023/04/26 10:51:10 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/04/26 13:00:42 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	ft_render_next_frame(t_data *data)
 /* checks for keyboard or mouse input */
 {
-    ft_background(data);
+    ft_put_background(data);
     mlx_key_hook(data->mlx, ft_keyhook, data);
 	return (0);
 }
@@ -30,12 +30,9 @@ int main (int argv, char *argc[])
         ft_printf("Error\nNo valid map file given closing program...\n");
         return (EXIT_FAILURE);
     }
-    mlx_image_t *img = mlx_new_image(data.mlx, WIDTH, HEIGHT);
-    mlx_image_to_window(data.mlx, img, 200, 0);
     ft_init(&data);
-    img = mlx_texture_to_image(data.mlx, data.img->player_up);
-    mlx_image_to_window(data.mlx, img, 200, 0);
     ft_render_next_frame(&data);
+    
     // mlx_key_hook(mlx, ft_keyhook, NULL);
     mlx_loop(data.mlx);
 

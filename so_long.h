@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:54:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/04/26 10:52:44 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/04/26 14:00:23 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 #define WIDTH 800
 #define HEIGHT 600
+#define BG_H	32
+#define BG_W	32
 # define W 13
 # define A 0
 # define S 1
@@ -35,7 +37,16 @@ typedef struct s_img
 	void	*player_right;
 	void	*player_down;
 	void	*background;
+	void	*playfield;
 }				t_img;
+
+typedef struct s_player
+{
+	void	*player_up;
+	void	*player_left;
+	void	*player_right;
+	void	*player_down;
+}				t_player;
 typedef struct s_map
 {
 	char	**map;
@@ -55,6 +66,7 @@ typedef struct s_data
 	int		collected;
 	t_map	*map;
 	t_img	*img;
+	t_player *player;
 }				t_data;
 typedef struct s_point {
 	int x;
@@ -83,6 +95,7 @@ void ft_loop(void *data);
 void ft_background(t_data *data);
 void ft_init(t_data *data);
 void ft_keyhook(mlx_key_data_t keydata, t_data *data);
+void	ft_put_background(t_data *data);
 
 // void ft_draw_map_lines(char *map);
 
