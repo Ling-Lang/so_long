@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: dylan <dylan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:54:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/04/26 14:00:23 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/06/13 10:11:13 by dylan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <fcntl.h>
 
 #define WIDTH 800
-#define HEIGHT 600
+#define HEIGHT 640
 #define BG_H	32
 #define BG_W	32
 # define W 13
@@ -79,7 +79,12 @@ typedef struct s_rect {
 	int y2;
 } t_rect;
 
-
+int	ft_count(char *s, char c);
+static void	ft_map_error(char *error_msg);
+static void	ft_check_borders(t_data *data);
+static void	ft_check_content(t_data *data);
+static void	ft_input_error(int	argc);
+void	ft_parse_input(t_data *data, char **argv, int argc);
 
 
 void	ft_putline(mlx_image_t *img, int x1, int y1,int x2, int y2, int color);

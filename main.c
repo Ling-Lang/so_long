@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: dylan <dylan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:33:52 by jkulka            #+#    #+#             */
-/*   Updated: 2023/04/27 11:23:23 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/06/13 10:14:12 by dylan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,20 @@ static int	ft_render_next_frame(t_data *data)
     mlx_key_hook(data->mlx, ft_keyhook, data);
 	return (0);
 }
-int main (int argv, char *argc[])
+int main (int argc, char *argv[])
 {
     t_data data;
     
    data.mlx = mlx_init(WIDTH, HEIGHT, "so_long", false);
-    if(ft_checkmap(argv, argc) == 1)
-    {
-        mlx_terminate(data.mlx);
-        ft_printf("Error\nNo valid map file given closing program...\n");
-        return (EXIT_FAILURE);
-    }
+    // if(ft_checkmap(argv, argc) == 1)
+    // {
+    //     mlx_terminate(data.mlx);
+    //     ft_printf("Error\nNo valid map file given closing program...\n");
+    //     return (EXIT_FAILURE);
+    // }
+    
     ft_init(&data);
+    ft_parse_input(&data, argv, argc);
     ft_render_next_frame(&data);
     
     // mlx_key_hook(mlx, ft_keyhook, NULL);

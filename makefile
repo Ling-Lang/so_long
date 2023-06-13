@@ -13,7 +13,9 @@ MAND = 	main.c \
 		check_map.c \
 		movement.c	\
 		init.c 		\
-		hooks.c
+		hooks.c		\
+		so_long_utils.c \
+		parse_map.c \
 
 MANDOBJ	= $(MAND:.c=.o)
 
