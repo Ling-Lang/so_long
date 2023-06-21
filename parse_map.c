@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dylan <dylan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:08:54 by dylan             #+#    #+#             */
-/*   Updated: 2023/06/13 11:17:28 by dylan            ###   ########.fr       */
+/*   Updated: 2023/06/21 12:25:22 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void	ft_check_content(t_data *data)
 	exit = 0;
 	player = 0;
 	data->map->collectible = 0;
-	y = 0;
+	y = 1;
 	while (data->map->map && data->map->map[y])
 	{
 		exit += ft_count(data->map->map[y], 'E');
@@ -64,8 +64,8 @@ static void	ft_check_content(t_data *data)
 		data->map->collectible += ft_count(data->map->map[y], 'C');
 		y++;
 	}
-	if (player != 1)
-		ft_map_error("Error\nonly valid map if one player is contained\n");
+ 	if (player != 1)
+		ft_map_error("Error\nonly valid map if exactly one player is contained\n");
 	if (exit == 0)
 		ft_map_error("Error\nonly valid map if at least one exit is contained\n");
 	if (data->map->collectible == 0)
@@ -95,14 +95,12 @@ void	ft_parse_input(t_data *data, char **argv, int argc)
 	while (bytes == 1)
 	{
 		bytes = read(fd, buffer, 1);
+		
 		if (bytes != 1)
 			break ;
-
 		if (buffer[0] != '\n' && buffer[0] != '\0')
-		{
 			data->map->map[i] = ft_strjoin(data->map->map[i], buffer);
-		}
-		else	
+		else
 			i++;
 	}
 	ft_check_content(data);

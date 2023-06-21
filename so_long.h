@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dylan <dylan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:54:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/06/13 10:11:13 by dylan            ###   ########.fr       */
+/*   Updated: 2023/06/21 11:56:36 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,12 @@ void  ft_draw_map(char map);
 void ft_validate_map(char *path);
 void ft_loop(void *data);
 void ft_background(t_data *data);
-void ft_init(t_data *data);
+void ft_init(t_data *data, t_map *map);
 void ft_keyhook(mlx_key_data_t keydata, t_data *data);
 void	ft_put_background(t_data *data);
-
+/*--->Map Utils<---*/
+int	ft_count_lines(int fd, int x, int img_w);
+int ft_line_len(int fd);
 // void ft_draw_map_lines(char *map);
 
 
