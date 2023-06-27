@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:08:54 by dylan             #+#    #+#             */
-/*   Updated: 2023/06/21 12:25:22 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/06/27 12:01:22 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,13 @@ void	ft_parse_input(t_data *data, char **argv, int argc)
 		if (bytes != 1)
 			break ;
 		if (buffer[0] != '\n' && buffer[0] != '\0')
-			data->map->map[i] = ft_strjoin(data->map->map[i], buffer);
+		{
+			data->map->map[i] = ft_strjoin_gnl(data->map->map[i], buffer);
+		}
 		else
 			i++;
 	}
+	
 	ft_check_content(data);
 	ft_check_borders(data);
 }
