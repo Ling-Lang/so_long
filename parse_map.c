@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 10:08:54 by dylan             #+#    #+#             */
-/*   Updated: 2023/06/27 12:48:52 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/06/28 12:26:14 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,4 +108,5 @@ void	ft_parse_input(t_data *data, char **argv, int argc)
 	
 	ft_check_content(data);
 	ft_check_borders(data);
+    ft_place_object(data, 200, 110);
 }

@@ -16,7 +16,8 @@ MAND = 	main.c \
 		hooks.c		\
 		so_long_utils.c \
 		parse_map.c \
-		line_utils.c
+		line_utils.c \
+		place_obj.c
 
 MANDOBJ	= $(MAND:.c=.o)
 
