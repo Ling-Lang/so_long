@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:33:52 by jkulka            #+#    #+#             */
-/*   Updated: 2023/06/29 16:55:52 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/06/29 20:33:17 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ int main (int argc, char *argv[])
     ft_parse_input(&data, argv, argc);
     ft_render_next_frame(&data);
     mlx_loop(data.mlx);
-    mlx_loop_hook(data.mlx, ft_loop, data.mlx);
-    mlx_terminate(data.mlx);
-    return (EXIT_SUCCESS);
+    // mlx_loop(data.mlx);
+    // mlx_loop_hook(data.mlx, ft_loop, data.mlx);
+    // mlx_terminate(data.mlx);
+    // return (EXIT_SUCCESS);
 }

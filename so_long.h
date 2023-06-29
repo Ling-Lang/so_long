@@ -6,7 +6,7 @@
 /*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:54:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/06/29 17:18:39 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/06/29 20:53:03 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,6 @@
 #define HEIGHT 640
 #define BG_H	32
 #define BG_W	32
-# define W 13
-# define A 0
-# define S 1
-# define D 2
 # define UP -1
 # define DOWN 1
 # define LEFT -1
@@ -95,12 +91,9 @@ void ft_print_square(mlx_image_t *img, t_rect rect,int color);
 void ft_draw_rect(mlx_image_t *img, int posX, int posY, int width, int height, int color);
 void ft_print_rect_fill(mlx_image_t *img, t_rect rect, int color_border, int color_fill);
 int	create_trgb(int t, int r, int g, int b);
-int move_player(int keycode, t_rect *rect);	
 int ft_checkmap(int argc, char *argv[]);
 void  ft_draw_map(char map);
 void ft_validate_map(char *path);
-void ft_loop(void *data);
-void ft_background(t_data *data);
 void ft_init(t_data *data, t_map *map);
 void ft_keyhook(mlx_key_data_t keydata, t_data *data);
 void	ft_put_background(t_data *data);
@@ -109,6 +102,8 @@ void	ft_create_map(t_data *data);
 /*--->Map Utils<---*/
 int	ft_count_lines(int fd, int x, int img_w);
 int ft_line_len(int fd);
+void ft_success(t_data *data);
+void	ft_move(t_data *data, char pos, int dir);
 // void ft_draw_map_lines(char *map);
 
 
