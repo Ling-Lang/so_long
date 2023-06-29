@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:59:06 by jkulka            #+#    #+#             */
-/*   Updated: 2023/06/21 11:36:18 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/06/29 17:16:31 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ void ft_init(t_data *data, t_map *map)
     path = "textures/Ship_Down.png";
     data->img->player_down = mlx_texture_to_image(data->mlx, mlx_load_png(path));
     data->img->background = mlx_load_png("textures/Background_Tile.png");
+	path = "textures/Wall_Prototyp.png";
+	data->img->wall = mlx_texture_to_image(data->mlx, mlx_load_png(path));
+	path = "textures/Collectible.png";
+	data->img->collectible = mlx_texture_to_image(data->mlx, mlx_load_png(path));
+	path = "textures/Exit.png";
+	data->img->exit = mlx_texture_to_image(data->mlx, mlx_load_png(path));
 }
 
 void	ft_put_background(t_data *data)

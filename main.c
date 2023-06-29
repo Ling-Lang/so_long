@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:33:52 by jkulka            #+#    #+#             */
-/*   Updated: 2023/06/28 11:55:16 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/06/29 16:55:52 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static int	ft_render_next_frame(t_data *data)
 /* checks for keyboard or mouse input */
 {
     ft_put_background(data);
+    ft_create_map(data);
     mlx_key_hook(data->mlx, ft_keyhook, data);
 	return (0);
 }

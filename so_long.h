@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:54:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/06/28 11:34:21 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/06/29 17:18:39 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ typedef struct s_img
 	void	*player_down;
 	void	*background;
 	void	*playfield;
+	void	*wall;
+	void	*collectible;
+	void	*exit;
 }				t_img;
 
 typedef struct s_player
@@ -101,7 +104,8 @@ void ft_background(t_data *data);
 void ft_init(t_data *data, t_map *map);
 void ft_keyhook(mlx_key_data_t keydata, t_data *data);
 void	ft_put_background(t_data *data);
-void ft_place_object(t_data *data, int x, int y);
+void ft_place_object(t_data *data,int  obj_id);
+void	ft_create_map(t_data *data);
 /*--->Map Utils<---*/
 int	ft_count_lines(int fd, int x, int img_w);
 int ft_line_len(int fd);
