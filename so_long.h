@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkulka <jkulka@student.42heilbronn.de >    +#+  +:+       +#+        */
+/*   By: jkulka <jkulka@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:54:54 by jkulka            #+#    #+#             */
-/*   Updated: 2023/06/29 20:53:03 by jkulka           ###   ########.fr       */
+/*   Updated: 2023/06/30 11:01:13 by jkulka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ int	ft_count_lines(int fd, int x, int img_w);
 int ft_line_len(int fd);
 void ft_success(t_data *data);
 void	ft_move(t_data *data, char pos, int dir);
+void ft_exit(t_data *data);
 // void ft_draw_map_lines(char *map);
 
 
